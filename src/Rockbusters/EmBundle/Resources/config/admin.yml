@@ -1,0 +1,11 @@
+services:
+    admin.location:
+        class: Rockbusters\EmBundle\Admin\LocationAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Location" }
+        arguments:
+            - ~
+            - Rockbusters\EmBundle\Entity\Location
+            - ~
+        calls:
+            - [ setTranslationDomain, [RockbustersEmBundle]]
