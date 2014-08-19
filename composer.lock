@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0b706e2af60109f196be43d79ed8c534",
+    "hash": "a3225402c86c551e5920a4aeb9ea4cd8",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -774,6 +774,86 @@
                 "User management"
             ],
             "time": "2014-07-08 16:18:51"
+        },
+        {
+            "name": "gedmo/doctrine-extensions",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
+                "reference": "de89aaec17f4bde70db675b6f6c0ed70d1e855fe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/de89aaec17f4bde70db675b6f6c0ed70d1e855fe",
+                "reference": "de89aaec17f4bde70db675b6f6c0ed70d1e855fe",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/common": "~2.2",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "doctrine/common": ">=2.4.0-RC3",
+                "doctrine/dbal": ">=2.4.0-RC1",
+                "doctrine/mongodb": ">=1.0.3",
+                "doctrine/mongodb-odm": ">=1.0.0-BETA9",
+                "doctrine/orm": ">=2.4.0-RC1",
+                "symfony/yaml": "2.3.1"
+            },
+            "suggest": {
+                "doctrine/dbal": ">=2.3.2",
+                "doctrine/mongodb": ">=1.0.1",
+                "doctrine/mongodb-odm": ">=1.0.0-BETA7",
+                "doctrine/orm": ">=2.3.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Gedmo\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Buchmann",
+                    "email": "david@liip.ch"
+                },
+                {
+                    "name": "Gediminas Morkevicius",
+                    "email": "gediminas.morkevicius@gmail.com"
+                },
+                {
+                    "name": "Gustavo Falco",
+                    "email": "comfortablynumb84@gmail.com"
+                }
+            ],
+            "description": "Doctrine2 behavioral extensions",
+            "homepage": "http://gediminasm.org/",
+            "keywords": [
+                "Blameable",
+                "behaviors",
+                "doctrine2",
+                "extensions",
+                "gedmo",
+                "loggable",
+                "nestedset",
+                "sluggable",
+                "sortable",
+                "timestampable",
+                "translatable",
+                "tree",
+                "uploadable"
+            ],
+            "time": "2014-06-06 09:08:07"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -1777,12 +1857,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "d25808ed765a6ed62aae3de1a54f25b85602f5a1"
+                "reference": "51e4797671a02ceb5040fc764c96c62f64ab606b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/d25808ed765a6ed62aae3de1a54f25b85602f5a1",
-                "reference": "d25808ed765a6ed62aae3de1a54f25b85602f5a1",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/51e4797671a02ceb5040fc764c96c62f64ab606b",
+                "reference": "51e4797671a02ceb5040fc764c96c62f64ab606b",
                 "shasum": ""
             },
             "require": {
@@ -1848,7 +1928,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2014-08-18 12:14:25"
+            "time": "2014-08-19 13:23:26"
         },
         {
             "name": "sonata-project/block-bundle",
@@ -2494,6 +2574,68 @@
             "time": "2014-08-14 11:45:09"
         },
         {
+            "name": "stof/doctrine-extensions-bundle",
+            "version": "dev-master",
+            "target-dir": "Stof/DoctrineExtensionsBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stof/StofDoctrineExtensionsBundle.git",
+                "reference": "085cda7ce5dc12b807a5a7856f178c93725a9166"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stof/StofDoctrineExtensionsBundle/zipball/085cda7ce5dc12b807a5a7856f178c93725a9166",
+                "reference": "085cda7ce5dc12b807a5a7856f178c93725a9166",
+                "shasum": ""
+            },
+            "require": {
+                "gedmo/doctrine-extensions": "~2.3.1",
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": "~2.1"
+            },
+            "suggest": {
+                "doctrine/doctrine-bundle": "to use the ORM extensions",
+                "doctrine/mongodb-odm-bundle": "to use the MongoDB ODM extensions"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Stof\\DoctrineExtensionsBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christophe Coevoet",
+                    "email": "stof@notk.org"
+                }
+            ],
+            "description": "Integration of the gedmo/doctrine-extensions with Symfony2",
+            "homepage": "https://github.com/stof/StofDoctrineExtensionsBundle",
+            "keywords": [
+                "behaviors",
+                "doctrine2",
+                "extensions",
+                "gedmo",
+                "loggable",
+                "nestedset",
+                "sluggable",
+                "sortable",
+                "timestampable",
+                "translatable",
+                "tree"
+            ],
+            "time": "2014-07-08 17:06:10"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v5.2.1",
             "source": {
@@ -3093,7 +3235,9 @@
         "friendsofsymfony/user-bundle": 20,
         "sonata-project/easy-extends-bundle": 20,
         "sonata-project/datagrid-bundle": 20,
-        "sonata-project/user-bundle": 20
+        "sonata-project/user-bundle": 20,
+        "gedmo/doctrine-extensions": 20,
+        "stof/doctrine-extensions-bundle": 20
     },
     "prefer-stable": false,
     "platform": {

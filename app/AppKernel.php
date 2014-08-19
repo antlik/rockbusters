@@ -3,10 +3,9 @@
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
-class AppKernel extends Kernel
-{
-    public function registerBundles()
-    {
+class AppKernel extends Kernel {
+
+    public function registerBundles() {
         $bundles = array(
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
@@ -16,31 +15,23 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            
             new Rockbusters\EmBundle\RockbustersEmBundle(),
-            
             new FOS\UserBundle\FOSUserBundle(),
+
+            new Sonata\CoreBundle\SonataCoreBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
+            new Sonata\jQueryBundle\SonatajQueryBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             
-        // Add your dependencies
-        new Sonata\CoreBundle\SonataCoreBundle(),
-        new Sonata\BlockBundle\SonataBlockBundle(),
-        new Sonata\jQueryBundle\SonatajQueryBundle(),
-        new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-        //...
-
-        // If you haven't already, add the storage bundle
-        // This example uses SonataDoctrineORMAdmin but
-        // it works the same with the alternatives
-        new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
-
-        // Then add SonataAdminBundle
-        new Sonata\AdminBundle\SonataAdminBundle(),    
-             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
-                   // Application Bundles
-            // ...
+            // Application Bundles
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
-    
-            
+            //sluggabble
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
@@ -53,8 +44,8 @@ class AppKernel extends Kernel
         return $bundles;
     }
 
-    public function registerContainerConfiguration(LoaderInterface $loader)
-    {
-        $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
+    public function registerContainerConfiguration(LoaderInterface $loader) {
+        $loader->load(__DIR__ . '/config/config_' . $this->getEnvironment() . '.yml');
     }
+
 }
