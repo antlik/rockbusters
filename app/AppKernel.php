@@ -18,6 +18,8 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Rockbusters\EmBundle\RockbustersEmBundle(),
             
+            new FOS\UserBundle\FOSUserBundle(),
+            
         // Add your dependencies
         new Sonata\CoreBundle\SonataCoreBundle(),
         new Sonata\BlockBundle\SonataBlockBundle(),
@@ -32,6 +34,13 @@ class AppKernel extends Kernel
 
         // Then add SonataAdminBundle
         new Sonata\AdminBundle\SonataAdminBundle(),    
+             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
+            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+                   // Application Bundles
+            // ...
+            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+    
+            
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
