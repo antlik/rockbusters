@@ -30,8 +30,14 @@ class AppKernel extends Kernel {
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
             // Application Bundles
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+
             //sluggabble
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            
+            new Sonata\MediaBundle\SonataMediaBundle(),
+            new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
+            
+            new JMS\SerializerBundle\JMSSerializerBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
