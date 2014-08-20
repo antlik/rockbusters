@@ -38,6 +38,8 @@ class AppKernel extends Kernel {
             new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
             
             new JMS\SerializerBundle\JMSSerializerBundle(),
+            
+            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

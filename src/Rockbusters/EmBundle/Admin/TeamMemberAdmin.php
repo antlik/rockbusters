@@ -1,5 +1,5 @@
 <?php
-// src/Acme/DemoBundle/Admin/LocationAdmin.php
+// src/Acme/DemoBundle/Admin/TeamMemberAdmin.php
 
 namespace Rockbusters\EmBundle\Admin;
 
@@ -8,7 +8,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 
-class LocationAdmin extends Admin
+class TeamMemberAdmin extends Admin
 {
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
@@ -17,7 +17,7 @@ class LocationAdmin extends Admin
             ->add('name', 'text', array('label' => 'Post Title'))
             //->add('author', 'entity', array('class' => 'Acme\DemoBundle\Entity\User'))
             ->add('description') //if no type is specified, SonataAdminBundle tries to guess it
-->add('media', 'sonata_type_model_list', array(), array('link_parameters' => array('context' => 'location')))
+//->add('media', 'sonata_type_model_list', array(), array('link_parameters' => array('context' => 'location')))
             ;
     }
 

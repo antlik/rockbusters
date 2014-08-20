@@ -9,3 +9,13 @@ services:
             - ~
         calls:
             - [ setTranslationDomain, [RockbustersEmBundle]]
+    admin.team_member:
+        class: Rockbusters\EmBundle\Admin\TeamMemberAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Team Member" }
+        arguments:
+            - ~
+            - Rockbusters\EmBundle\Entity\TeamMember
+            - ~
+        calls:
+            - [ setTranslationDomain, [RockbustersEmBundle]]            

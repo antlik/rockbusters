@@ -6,12 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * Location
+ * TeamMember
  *
- * @ORM\Table(name="em_location")
+ * @ORM\Table(name="em_team_member")
  * @ORM\Entity
  */
-class Location
+class TeamMember
 {
     /**
      * @var integer
@@ -47,14 +47,12 @@ class Location
      *
      * @return integer 
      */
-    
+
     /**
-     * @var \Application\Sonata\MediaBundle\Entity\Media
-     * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media", cascade={"persist"}, fetch="LAZY")
+     * Get id
+     *
+     * @return integer 
      */
-    protected $media;
-    
-    
     public function getId()
     {
         return $this->id;
@@ -64,7 +62,7 @@ class Location
      * Set name
      *
      * @param string $name
-     * @return Location
+     * @return TeamMember
      */
     public function setName($name)
     {
@@ -84,33 +82,10 @@ class Location
     }
 
     /**
-     * Set description
-     *
-     * @param string $description
-     * @return Location
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string 
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
      * Set slug
      *
      * @param string $slug
-     * @return Location
+     * @return TeamMember
      */
     public function setSlug($slug)
     {
@@ -128,26 +103,32 @@ class Location
     {
         return $this->slug;
     }
- 
+
     /**
-     * @param MediaInterface $media
+     * Set description
+     *
+     * @param string $description
+     * @return TeamMember
      */
-    public function setMedia(\Application\Sonata\MediaBundle\Entity\Media $media)
+    public function setDescription($description)
     {
-        $this->media = $media;
+        $this->description = $description;
+
+        return $this;
     }
 
     /**
-     * @return MediaInterface
+     * Get description
+     *
+     * @return string 
      */
-    public function getMedia()
+    public function getDescription()
     {
-        return $this->media;
-    }  
+        return $this->description;
+    }
     
     public function __toString()
     {
         return $this->getName();
-    }   
-    
+    }    
 }

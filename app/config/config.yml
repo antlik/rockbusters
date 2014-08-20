@@ -68,6 +68,7 @@ doctrine:
                     SonataUserBundle: ~
                     ApplicationSonataMediaBundle: ~
                     SonataMediaBundle: ~
+                    RockbustersEmBundle: ~
                     
                     #SonataPageBundle: ~         
 
@@ -110,7 +111,9 @@ sonata_media:
     #    gallery: MyVendor\MediaBundle\Entity\Gallery
     #    gallery_has_media: MyVendor\MediaBundle\Entity\GalleryHasMedia
     class:
-        media:              Application\Sonata\MediaBundle\Entity\Media    
+        media: Application\Sonata\MediaBundle\Entity\Media   
+        gallery: Application\Sonata\MediaBundle\Entity\Gallery  
+        gallery_has_media: Application\Sonata\MediaBundle\Entity\GalleryHasMedia
     default_context: default
     db_driver: doctrine_orm
     contexts:
@@ -124,6 +127,14 @@ sonata_media:
             formats:
                 small: { width: 100 , quality: 70}
                 big:   { width: 500 , quality: 70}
+        location:
+            providers:
+                - sonata.media.provider.image
+
+            formats:
+                preview:   { width: 100, quality: 100}
+                small:     { width: 200, quality: 100}
+                large:     { width: 600, quality: 100}                
 
     cdn:
         server:
@@ -133,3 +144,15 @@ sonata_media:
         local:
             directory:  %kernel.root_dir%/../web/uploads/media
             create:     false        
+            
+doctrine_migrations:
+    dir_name: %kernel.root_dir%/DoctrineMigrations
+    namespace: Application\Migrations
+    table_name: migration_versions
+    name: Application Migrations
+    
+stof_doctrine_extensions:
+    orm:
+        default:
+            sluggable:   true
+            
