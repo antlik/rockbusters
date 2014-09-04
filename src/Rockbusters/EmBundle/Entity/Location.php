@@ -9,7 +9,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * Location
  *
  * @ORM\Table(name="em_location")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Rockbusters\EmBundle\Repository\LocationRepository")
  */
 class Location
 {

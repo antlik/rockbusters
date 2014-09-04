@@ -1,6 +1,5 @@
 rockbusters_em:
-    resource: "@RockbustersEmBundle/Controller/"
-    type:     annotation
+    resource: "@RockbustersEmBundle/Resources/config/routing.yml"
     prefix:   /
 
 

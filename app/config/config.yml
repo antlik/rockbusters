@@ -70,8 +70,13 @@ doctrine:
                     SonataMediaBundle: ~
                     RockbustersEmBundle: ~
                     
-                    #SonataPageBundle: ~         
-
+                    #SonataPageBundle: ~     
+                    
+stof_doctrine_extensions:
+    orm:
+        default:
+            sluggable:   true
+            
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"
@@ -151,8 +156,33 @@ doctrine_migrations:
     table_name: migration_versions
     name: Application Migrations
     
-stof_doctrine_extensions:
-    orm:
-        default:
-            sluggable:   true
             
+sonata_seo:
+    default:          sonata.seo.page.default
+    encoding:         UTF-8
+    page:
+        title:            Rockbusters
+        metas:
+            name:
+                keywords:             rockclimbing
+                description:          The description - the best !!
+                robots:               index, follow
+
+            property:
+                # Facebook application settings
+                #'fb:app_id':          XXXXXX
+                #'fb:admins':          admin1, admin2
+
+                # Open Graph information
+                # see http://developers.facebook.com/docs/opengraphprotocol/#types or http://ogp.me/
+                'og:site_name':       Rockbusters.net
+                'og:description':     rocklimbing, bouldering
+
+            http-equiv:
+                'Content-Type':         text/html; charset=utf-8
+                #'X-Ua-Compatible':      IE=EmulateIE7
+
+        head:
+            'xmlns':              http://www.w3.org/1999/xhtml
+            'xmlns:og':           http://opengraphprotocol.org/schema/
+            #'xmlns:fb':           "http://www.facebook.com/2008/fbml"            

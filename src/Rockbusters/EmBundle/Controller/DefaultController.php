@@ -16,4 +16,22 @@ class DefaultController extends Controller
     {
         return array('name' => $name);
     }
+    
+    /**
+     * @Route("/location/{slug}")
+     * @Template()
+     */
+    public function locationAction($slug)
+    {
+        
+                $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('RockbustersEmBundle:Location')->findAll();
+
+        return array(
+            'entities' => $entities,
+        );
+        
+        return array('slug' => $slug);
+    }    
 }

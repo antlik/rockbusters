@@ -38,7 +38,9 @@
         "jms/serializer-bundle": "0.13.*@dev",
         
         "doctrine/migrations": "1.0.*@dev",
-        "doctrine/doctrine-migrations-bundle": "2.1.*@dev"
+        "doctrine/doctrine-migrations-bundle": "2.1.*@dev",
+        
+        "sonata-project/seo-bundle": "1.1.*@dev"
         
     },
     "scripts": {

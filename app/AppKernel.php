@@ -40,6 +40,8 @@ class AppKernel extends Kernel {
             new JMS\SerializerBundle\JMSSerializerBundle(),
             
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+            
+            new Sonata\SeoBundle\SonataSeoBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

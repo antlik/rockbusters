@@ -1,0 +1,7 @@
+rockbusters_em_location:
+    path:      /location/{slug}
+    defaults:  { _controller: RockbustersEmBundle:Location:show }
+
+rockbusters_em_locations:
+    path:      /locations
+    defaults:  { _controller: RockbustersEmBundle:Location:index }

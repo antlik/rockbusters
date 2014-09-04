@@ -2,15 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/Users/antlik/NetBeansProjects/rockbusters/src/Rockbusters/EmBundle/DependencyInjection/Configuration.php</file>
-            <file>file:/Users/antlik/NetBeansProjects/rockbusters/composer.json</file>
-            <file>file:/Users/antlik/NetBeansProjects/rockbusters/app/config/config.yml</file>
-            <file>file:/Users/antlik/NetBeansProjects/rockbusters/src/Rockbusters/EmBundle/DependencyInjection/RockbustersEmExtension.php</file>
-            <file>file:/Users/antlik/NetBeansProjects/rockbusters/app/AppKernel.php</file>
-            <file>file:/Users/antlik/NetBeansProjects/rockbusters/app/config/routing.yml</file>
-            <file>file:/Users/antlik/NetBeansProjects/rockbusters/src/Application/Sonata/UserBundle/Resources/translations/SonataUserBundle.en.yml</file>
-            <file>file:/Users/antlik/NetBeansProjects/rockbusters/app/config/security.yml</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
