@@ -40,7 +40,9 @@
         "doctrine/migrations": "1.0.*@dev",
         "doctrine/doctrine-migrations-bundle": "2.1.*@dev",
         
-        "sonata-project/seo-bundle": "1.1.*@dev"
+        "sonata-project/seo-bundle": "1.1.*@dev",
+        
+        "oh/google-map-form-type-bundle": "dev-master"
         
     },
     "scripts": {

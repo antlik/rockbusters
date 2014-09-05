@@ -5,6 +5,9 @@ namespace Rockbusters\EmBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
+use Symfony\Component\Validator\Constraints as Assert;
+use Oh\GoogleMapFormTypeBundle\Validator\Constraints as OhAssert;
+
 /**
  * Location
  *
@@ -54,6 +57,19 @@ class Location
      */
     protected $media;
     
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="lat", type="float")
+     */
+    private $lat; 
+    
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="lng", type="float")
+     */
+    private $lng;     
     
     public function getId()
     {
@@ -150,4 +166,66 @@ class Location
         return $this->getName();
     }   
     
+
+    /**
+     * Set lat
+     *
+     * @param float $lat
+     * @return Location
+     */
+    public function setLat($lat)
+    {
+        $this->lat = $lat;
+
+        return $this;
+    }
+
+    /**
+     * Get lat
+     *
+     * @return float 
+     */
+    public function getLat()
+    {
+        return $this->lat;
+    }
+
+    /**
+     * Set lng
+     *
+     * @param float $lng
+     * @return Location
+     */
+    public function setLng($lng)
+    {
+        $this->lng = $lng;
+
+        return $this;
+    }
+
+    /**
+     * Get lng
+     *
+     * @return float 
+     */
+    public function getLng()
+    {
+        return $this->lng;
+    }
+    
+    public function setLatLng($latlng)
+    {
+        $this->setLat($latlng['lat']);
+        $this->setLng($latlng['lng']);
+        return $this;
+    }
+
+    /**
+     * @Assert\NotBlank()
+     * @OhAssert\LatLng()
+     */
+    public function getLatLng()
+    {
+        return array('lat'=>$this->getLat(),'lng'=>$this->getLng());
+    }
 }

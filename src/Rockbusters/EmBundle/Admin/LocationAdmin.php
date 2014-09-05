@@ -18,6 +18,7 @@ class LocationAdmin extends Admin
             //->add('author', 'entity', array('class' => 'Acme\DemoBundle\Entity\User'))
             ->add('description') //if no type is specified, SonataAdminBundle tries to guess it
 ->add('media', 'sonata_type_model_list', array(), array('link_parameters' => array('context' => 'location')))
+            ->add('latlng', 'oh_google_maps');
             ;
     }
 

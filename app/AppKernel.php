@@ -42,6 +42,9 @@ class AppKernel extends Kernel {
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             
             new Sonata\SeoBundle\SonataSeoBundle(),
+            
+           // new Ivory\GoogleMapBundle\IvoryGoogleMapBundle(),
+            new Oh\GoogleMapFormTypeBundle\OhGoogleMapFormTypeBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
