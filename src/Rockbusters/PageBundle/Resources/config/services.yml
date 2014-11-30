@@ -1,0 +1,7 @@
+parameters:
+#    rockbusters_page.example.class: Rockbusters\PageBundle\Example
+
+services:
+#    rockbusters_page.example:
+#        class: %rockbusters_page.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

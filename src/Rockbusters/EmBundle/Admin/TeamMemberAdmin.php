@@ -16,8 +16,8 @@ class TeamMemberAdmin extends Admin
         $formMapper
             ->add('name', 'text', array('label' => 'Post Title'))
             //->add('author', 'entity', array('class' => 'Acme\DemoBundle\Entity\User'))
-            ->add('description') //if no type is specified, SonataAdminBundle tries to guess it
-//->add('media', 'sonata_type_model_list', array(), array('link_parameters' => array('context' => 'location')))
+            ->add('description', null, array('attr' => array('class' => 'ckeditor'))) //if no type is specified, SonataAdminBundle tries to guess it
+            ->add('media', 'sonata_type_model_list', array(), array('link_parameters' => array('context' => 'team_member')))
             ;
     }
 

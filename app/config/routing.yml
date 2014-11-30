@@ -1,8 +1,12 @@
-rockbusters_em:
-    resource: "@RockbustersEmBundle/Resources/config/routing.yml"
-    prefix:   /
-
-
+rockbusters_em_homepage:
+    pattern:      /
+    defaults:  { _controller: RockbustersPageBundle:Default:show, slug: 'homepage' } 
+    
+# app/config/routing.yml
+pages:
+    resource: '@RockbustersPageBundle/Resources/config/routing.yml'
+em_bundle:
+    resource: '@RockbustersEmBundle/Resources/config/routing.yml'        
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /admin

@@ -1,32 +1,27 @@
 <?php
-// src/Acme/DemoBundle/Admin/LocationAdmin.php
-
-namespace Rockbusters\EmBundle\Admin;
+namespace Rockbusters\PageBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 
-class LocationAdmin extends Admin
+class PageAdmin extends Admin
 {
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('name', 'text', array('label' => 'Post Title'))
+            ->add('title', 'text', array('label' => 'Page Title'))
             //->add('author', 'entity', array('class' => 'Acme\DemoBundle\Entity\User'))
-            ->add('description') //if no type is specified, SonataAdminBundle tries to guess it
-            ->add('media', 'sonata_type_model_list', array(), array('link_parameters' => array('context' => 'location')))
-            ->add('latlng', 'oh_google_maps');
-            ;
+            ->add('description');
     }
 
     // Fields to be shown on filter forms
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('name')
+            ->add('title')
             ->add('description')
         ;
     }
@@ -35,7 +30,7 @@ class LocationAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('name')
+            ->addIdentifier('title')
             ->add('slug')
             //->add('author')
         ;

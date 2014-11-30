@@ -1,0 +1,14 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Team{% endblock %}
+
+{% block body %}
+
+    {% for member in team %}
+        
+    <a href="{{ path('rockbusters_em_team_member', {'slug': member.slug}) }}">
+        <h2>{{ member }}</h2>
+    </a>
+    {% endfor %}
+
+{% endblock %}

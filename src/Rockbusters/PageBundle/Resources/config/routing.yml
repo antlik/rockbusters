@@ -1,0 +1,5 @@
+rockbusters_pages:
+    pattern:      /page/{slug}
+    defaults:  { _controller: RockbustersPageBundle:Default:show } 
+    requirements:
+        _method:  GET

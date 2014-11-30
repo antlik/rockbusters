@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: @RockbustersEmBundle/Resources/config/admin.yml }
+    - { resource: @RockbustersPageBundle/Resources/config/admin.yml }
 
 framework:
     #esi:             ~
@@ -74,6 +75,8 @@ doctrine:
                     ApplicationSonataMediaBundle: ~
                     SonataMediaBundle: ~
                     RockbustersEmBundle: ~
+                    RockbustersEmBundle: ~
+                    RockbustersPageBundle: ~
                     
                     #SonataPageBundle: ~     
                     

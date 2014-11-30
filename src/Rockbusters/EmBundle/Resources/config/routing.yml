@@ -5,3 +5,11 @@ rockbusters_em_location:
 rockbusters_em_locations:
     path:      /locations
     defaults:  { _controller: RockbustersEmBundle:Location:index }
+    
+rockbusters_em_team:
+    path:      /team
+    defaults:  { _controller: RockbustersEmBundle:TeamMember:index }
+
+rockbusters_em_team_member:
+    path:      /team/{slug}
+    defaults:  { _controller: RockbustersEmBundle:TeamMember:show }

@@ -18,4 +18,14 @@ services:
             - Rockbusters\EmBundle\Entity\TeamMember
             - ~
         calls:
-            - [ setTranslationDomain, [RockbustersEmBundle]]            
+            - [ setTranslationDomain, [RockbustersEmBundle]]        
+    admin.event:
+        class: Rockbusters\EmBundle\Admin\EventAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Events", label: "Event" }
+        arguments:
+            - ~
+            - Rockbusters\EmBundle\Entity\Event
+            - ~
+        calls:
+            - [ setTranslationDomain, [RockbustersEmBundle]]             

@@ -5,15 +5,14 @@ namespace Rockbusters\EmBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
-use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * TeamMember
+ * Event
  *
- * @ORM\Table(name="em_team_member")
- * @ORM\Entity(repositoryClass="Rockbusters\EmBundle\Repository\TeamMemberRepository")
+ * @ORM\Table(name="em_event")
+ * @ORM\Entity(repositoryClass="Rockbusters\EmBundle\Repository\EventRepository")
  */
-class TeamMember
+class Event
 {
     /**
      * @var integer
@@ -23,7 +22,7 @@ class TeamMember
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+    
     /**
      * @var string
      *
@@ -51,17 +50,12 @@ class TeamMember
      */
     
     /**
-     * @var \Application\Sonata\MediaBundle\Entity\Media
-     * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media", cascade={"persist"}, fetch="LAZY")
+     * @ORM\ManyToOne(targetEntity="Rockbusters\EmBundle\Entity\TeamMember", inversedBy="events")
+     * @ORM\JoinColumn(name="event_id", referencedColumnName="id")
      */
-    protected $media;    
+    protected $teamMember;
+    
 
-    /**
-     * @ORM\OneToMany(targetEntity="Event", mappedBy="teamMember")
-     */
-    protected $events;
-    
-    
     /**
      * Get id
      *
@@ -76,7 +70,7 @@ class TeamMember
      * Set name
      *
      * @param string $name
-     * @return TeamMember
+     * @return Event
      */
     public function setName($name)
     {
@@ -99,7 +93,7 @@ class TeamMember
      * Set slug
      *
      * @param string $slug
-     * @return TeamMember
+     * @return Event
      */
     public function setSlug($slug)
     {
@@ -122,7 +116,7 @@ class TeamMember
      * Set description
      *
      * @param string $description
-     * @return TeamMember
+     * @return Event
      */
     public function setDescription($description)
     {
@@ -140,72 +134,27 @@ class TeamMember
     {
         return $this->description;
     }
-    
-    public function __toString()
-    {
-        return $this->getName();
-    }    
 
     /**
-     * Set media
+     * Set event
      *
-     * @param \Application\Sonata\MediaBundle\Entity\Media $media
-     * @return TeamMember
+     * @param \Rockbusters\EmBundle\Entity\TeamMember $event
+     * @return Event
      */
-    public function setMedia(\Application\Sonata\MediaBundle\Entity\Media $media = null)
+    public function setTeamMember(\Rockbusters\EmBundle\Entity\TeamMember $event = null)
     {
-        $this->media = $media;
+        $this->teamMember = $teamMember;
 
         return $this;
     }
 
     /**
-     * Get media
+     * Get event
      *
-     * @return \Application\Sonata\MediaBundle\Entity\Media 
+     * @return \Rockbusters\EmBundle\Entity\TeamMember 
      */
-    public function getMedia()
+    public function getTeamMember()
     {
-        return $this->media;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->events = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add events
-     *
-     * @param \Rockbusters\EmBundle\Entity\Event $events
-     * @return TeamMember
-     */
-    public function addEvent(\Rockbusters\EmBundle\Entity\Event $events)
-    {
-        $this->events[] = $events;
-
-        return $this;
-    }
-
-    /**
-     * Remove events
-     *
-     * @param \Rockbusters\EmBundle\Entity\Event $events
-     */
-    public function removeEvent(\Rockbusters\EmBundle\Entity\Event $events)
-    {
-        $this->events->removeElement($events);
-    }
-
-    /**
-     * Get events
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getEvents()
-    {
-        return $this->events;
+        return $this->teamMember;
     }
 }
